@@ -3,14 +3,13 @@
   padding: 20px;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  background-color: #fff;
   margin-bottom: 20px;
   position: relative;
   min-height: 15vh;
 }
 
 .content {
-  padding-bottom: 0px; /* 给底部留出空间 */
+  padding-bottom: 0px;
 }
 
 .fixed-bottom {
@@ -82,5 +81,7 @@
 
 .result image {
   max-width: 100%;
-  margin-bottom: 20px;
+  height: auto;
+  margin-bottom: 0px;
+  padding: 5px;
 }

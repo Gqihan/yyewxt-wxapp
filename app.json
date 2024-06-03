@@ -4,7 +4,8 @@
     "pages/medicine/medicine",
     "pages/diet/diet",
     "pages/tcm/tcm",
-    "pages/card/card"
+    "pages/card/card",
+    "utils/request"
   ],
   "tabBar": {
     "color": "#8A8A8A",
@@ -30,7 +31,6 @@
         "iconPath": "asset/icons/medicine (1).png",
         "selectedIconPath": "asset/icons/medicine (2).png"
       },
-      
       {
         "pagePath": "pages/tcm/tcm",
         "text": "Medicine",

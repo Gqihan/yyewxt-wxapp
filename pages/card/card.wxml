@@ -1,4 +1,4 @@
-<view class="card">
+<scroll-view class="card" scroll-y="true" style="height: 100vh;">
   <view class="button-group">
     <button bindtap="searchMedicine">查询中药</button>
     <button bindtap="searchDisease">查询疾病</button>
@@ -10,10 +10,33 @@
   <view wx:if="{{error}}" class="error">{{error}}</view>
   <view wx:if="{{result}}">
     <view class="result">
-      <image wx:if="{{result.image}}" src="{{result.image}}" mode="widthFix"/>
+      <!-- 中药部分 -->
+      <view wx:if="{{isMedicineQuery}}">
+        <image wx:if="{{!medicineImageLoadError && medicineImageUrl}}" src="{{medicineImageUrl}}" mode="widthFix" binderror="onImageLoadError" data-type="medicine"/>
+        <view wx:if="{{medicineImageLoadError}}">
+          <text>中药图片加载失败</text>
+          <button bindtap="copyLink" data-url="{{medicineImageLink}}">复制中药图片URL</button>
+        </view>
+        <view wx:if="{{!medicineImageLoadError}}">
+          <button bindtap="saveImage" data-url="{{medicineImageUrl}}">保存中药图片</button>
+        </view>
+      </view>
+      <!-- 疾病部分 -->
+      <view wx:if="{{!isMedicineQuery}}">
+        <image wx:if="{{!diseaseImageLoadError && diseaseImageUrl}}" src="{{diseaseImageUrl}}" mode="widthFix" binderror="onImageLoadError" data-type="disease"/>
+        <view wx:if="{{diseaseImageLoadError}}">
+          <text>疾病图片加载失败</text>
+          <button bindtap="copyLink" data-url="{{diseaseImageLink}}">复制疾病图片URL</button>
+        </view>
+        <view wx:if="{{!diseaseImageLoadError}}">
+          <button bindtap="saveImage" data-url="{{diseaseImageUrl}}">保存疾病图片</button>
+        </view>
+      </view>
+      <!-- 显示结果 -->
       <view wx:for="{{result}}" wx:key="key" wx:if="{{key !== 'image'}}">
         <view>{{key}}: {{item}}</view>
       </view>
     </view>
+    <button bindtap="copyFullText">复制全文</button>
   </view>
-</view>
+</scroll-view>
