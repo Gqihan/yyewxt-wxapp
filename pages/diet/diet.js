@@ -1,15 +1,15 @@
 Page({
   data: {
     recommendations: [
-      { title: '合理膳食  吃出健康（健康焦点）', image: '/asset/images/文章1.jpg', link: 'http://health.people.com.cn/n1/2022/0520/c14739-32425705.html' },
-      { title: '央视315晚会系列分析：食品安全类话题的曝光内容演变', image: '/asset/images/文章2.png', link: 'https://www.thepaper.cn/newsDetail_forward_26675300' },
-      { title: '“反式脂肪”引热议，益得来“菊芋+”能否扭转食品安全大环境？', image: '/asset/images/文章3.webp', link: 'https://www.sohu.com/a/781865235_120541367' },
-        { title: '“路边摊”撑起城市烟火气——深圳街市消费调查', image: '/asset/images2/文章4.jpg', link: 'https://www.cfsn.cn/news/detail/22/248014.html' },
-        { title: '《我的阿勒泰》与令人心动的地标产品“大果沙棘”', image: '/asset/images2/文章5.jpg', link: 'https://www.cfsn.cn/news/detail/181/248104.html' },
-        { title: '网络订餐安全监管引发关注 外卖如何做到方便又放心？', image:'/asset/images2/文章6.jpg', link: 'https://www.cfsn.cn/news/detail/748/248199.html' },
-        { title: '稻虾共生 江西彭泽17.2万亩小龙虾丰产增收', image: '/asset/images2/文章7.jpg', link: 'https://www.cfsn.cn/news/detail/30/248078.html' },
-        { title: '这些“养胃”谣言迟早把你胃养废！', image:'/asset/images2/文章8.jpg', link: 'https://www.cfsn.cn/news/detail/20/115052.html' },
-        { title: '痛风不能吃豆腐？乳腺炎不能喝豆浆？', image: '/asset/images2/文章9.png', link: 'https://www.cfsn.cn/news/detail/20/246919.html' }
+      { title: '合理膳食  吃出健康（健康焦点）', image: 'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A01.jpg', link: 'http://health.people.com.cn/n1/2022/0520/c14739-32425705.html' },
+      { title: '央视315晚会系列分析：食品安全类话题的曝光内容演变', image: 'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A02.png', link: 'https://www.thepaper.cn/newsDetail_forward_26675300' },
+      { title: '“反式脂肪”引热议，益得来“菊芋+”能否扭转食品安全大环境？', image: 'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A03.webp', link: 'https://www.sohu.com/a/781865235_120541367' },
+        { title: '“路边摊”撑起城市烟火气——深圳街市消费调查', image: 'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A04.jpg', link: 'https://www.cfsn.cn/news/detail/22/248014.html' },
+        { title: '《我的阿勒泰》与令人心动的地标产品“大果沙棘”', image: 'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A05.jpg', link: 'https://www.cfsn.cn/news/detail/181/248104.html' },
+        { title: '网络订餐安全监管引发关注 外卖如何做到方便又放心？', image:'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A06.jpg', link: 'https://www.cfsn.cn/news/detail/748/248199.html' },
+        { title: '稻虾共生 江西彭泽17.2万亩小龙虾丰产增收', image: 'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A07.jpg', link: 'https://www.cfsn.cn/news/detail/30/248078.html' },
+        { title: '这些“养胃”谣言迟早把你胃养废！', image:'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A08.jpg', link: 'https://www.cfsn.cn/news/detail/20/115052.html' },
+        { title: '痛风不能吃豆腐？乳腺炎不能喝豆浆？', image: 'https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A09.png', link: 'https://www.cfsn.cn/news/detail/20/246919.html' }
       ],
       selectedRecipe: null,
       recipes: {

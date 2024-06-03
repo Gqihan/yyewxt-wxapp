@@ -1,5 +1,5 @@
 <view class="container">
-  <image src="/asset/images/background.jpg" class="background-image" mode="aspectFill"/>
+  <image src="https://qihan1-1326979169.cos.ap-nanjing.myqcloud.com/background.jpg" class="background-image" mode="aspectFill"/>
   <view class="line">欢迎来到</view>
   <view class="line">Tom and Jerry</view>
   <view class="line">医药问答系统</view>
