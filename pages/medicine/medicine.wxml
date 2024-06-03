@@ -1,0 +1,30 @@
+<view class="medicine">
+  <view class="content">
+    <view class="title">医药智能助理Tom</view>
+
+    <scroll-view class="chat-content" scroll-y="true" bindscrolltolower="scrollToBottom">
+      <block wx:for="{{chatList}}" wx:key="index">
+        <view class="message {{item.prop ? 'robot' : 'me'}}">
+          <view class="avatar {{item.prop ? 'avatar-left' : 'avatar-right'}}">
+            <image class="avatar-img" src="{{item.prop ? '/asset/images/head2.jpg' : '/asset/images/head.jpg'}}"></image>
+          </view>
+          <view class="text">{{item.text}}</view>
+        </view>
+      </block>
+    </scroll-view>
+
+      <view class="hotItem">
+      <text>热门问题：</text>
+      <view class="hot-buttons">
+        <button class="hot-button" size="mini" bindtap="handleHotQuestion" data-question="感冒怎么办">感冒怎么办</button>
+        <button class="hot-button" size="mini" bindtap="handleHotQuestion" data-question="为什么会失眠">为什么会失眠</button>
+        <button class="hot-button" size="mini" bindtap="handleHotQuestion" data-question="哪些人容易得高血压">哪些人容易得高血压</button>
+      </view>
+    </view>
+
+    <view class="inputArea">
+      <input class="input" placeholder="在这里输入您的困惑哦~" value="{{text}}" bindinput="onInputChange"></input>
+      <button class="inputButton" bindtap="sendMessage">发送</button>
+    </view>
+  </view>
+</view>

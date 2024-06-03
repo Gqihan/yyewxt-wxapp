@@ -1,0 +1,8 @@
+<view class="container">
+  <image src="/asset/images/background.jpg" class="background-image" mode="aspectFill"/>
+  <view class="line">欢迎来到</view>
+  <view class="line">Tom and Jerry</view>
+  <view class="line">医药问答系统</view>
+</view>
+
+

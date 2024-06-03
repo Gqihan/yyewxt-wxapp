@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="header">
+    <text>中医药植株药材科普</text>
+  </view>
+  <view class="search-bar">
+    <input type="text" value="{{searchQuery}}" bindinput="onInput" placeholder="搜索草药" />
+    <button bindtap="search">搜索</button>
+  </view>
+  <scroll-view id="herbs-container" scroll-y="true" style="height: calc(100vh - 120px);" bindscrolltolower="loadMore">
+    <view class="herb" wx:for="{{paginatedHerbs}}" wx:key="title">
+      <image src="{{item.image}}" alt="{{item.title}}" mode="aspectFill" binderror="onImageError" data-index="{{index}}" class="herb-image"/>
+      <view class="herb-content">
+        <text class="herb-title">{{item.title}}</text>
+        <text wx:if="{{item.displayAliases}}" class="herb-detail"><text class="herb-label">别名：</text>{{item.displayAliases}}</text>
+        <text wx:if="{{item.effects}}" class="herb-detail"><text class="herb-label">功效：</text>{{item.effects}}</text>
+        <text wx:if="{{item.toxicity}}" class="herb-detail"><text class="herb-label">毒性：</text>{{item.toxicity}}</text>
+        <text wx:if="{{item.properties_and_flavors}}" class="herb-detail">{{item.properties_and_flavors}}</text>
+        <text wx:if="{{item.dosage}}" class="herb-detail">{{item.dosage}}</text>
+      </view>
+    </view>
+    <view class="pagination">
+      <text>{{currentPage + 1}} / {{totalPages}}</text>
+      <view class="pagination-buttons">
+        <button bindtap="previousPage">上一页</button>
+        <button bindtap="nextPage" wx:if="{{canLoadMore}}">下一页</button>
+      </view>
+    </view>
+  </scroll-view>
+</view>

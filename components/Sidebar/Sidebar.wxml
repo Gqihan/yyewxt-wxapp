@@ -1,0 +1,10 @@
+<!--components/Sidebar/Sidebar.wxml.wxml-->
+<text>components/Sidebar/Sidebar.wxml</text>
+<view class="sidebar">
+  <!-- 侧边栏内容 -->
+  <button bindtap="selectModule" data-module="Medicine">Medicine</button>
+  <button bindtap="selectModule" data-module="Diet">Diet</button>
+  <button bindtap="selectModule" data-module="TCM">TCM</button>
+  <button bindtap="selectModule" data-module="Card">Card</button>
+</view>
+

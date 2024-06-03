@@ -1,0 +1,85 @@
+<scroll-view class="diet" scroll-y style="height: 100vh;">
+  <view class="header">
+    <text>生活饮食科普</text>
+  </view>
+  <!-- 推荐内容滚动窗口 -->
+  <view class="recommendations">
+    <swiper autoplay interval="3000" circular>
+      <block wx:for="{{recommendations}}" wx:key="index">
+        <swiper-item>
+          <view class="recommendation" data-link="{{item.link}}" bindtap="openLink">
+            <image class="recommendation-image" src="{{item.image}}" />
+            <text class="recommendation-title">{{item.title}}</text>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <button class="arrow left" bindtap="previousPage">‹</button>
+    <button class="arrow right" bindtap="nextPage">›</button>
+  </view>
+
+  <!-- 食谱选择 -->
+  <view class="recipe-buttons">
+    <button bindtap="selectRecipe" data-type="breakfast">健康早餐</button>
+    <button bindtap="selectRecipe" data-type="lunch">营养午餐</button>
+    <button bindtap="selectRecipe" data-type="dinner">美味晚餐</button>
+  </view>
+
+  <!-- 健康食谱推荐 -->
+  <view class="recipes">
+    <text class="sub-title">健康食谱推荐</text>
+    <view class="recipe" wx:if="{{selectedRecipe}}">
+      <text class="recipe-name">{{selectedRecipe.name}}</text>
+      <text class="recipe-description">{{selectedRecipe.description}}</text>
+      <video src="{{selectedRecipe.video}}" controls></video>
+    </view>
+  </view>
+  
+  <!-- 每日一题 -->
+  <view class="daily-quiz">
+    <text class="sub-title">每日一题</text>
+    <view wx:if="{{dailyQuiz}}">
+      <text>{{dailyQuiz.text}}</text>
+      <view wx:for="{{dailyQuiz.options}}" wx:key="index">
+        <label>
+          <radio group="{{userAnswer}}" value="{{item}}" checked="{{userAnswer === item}}" bindchange="handleRadioChange">{{item}}</radio>
+        </label>
+      </view>
+      <button bindtap="submitDailyQuiz" wx:if="{{!hasAnswered}}">提交</button>
+    </view>
+  </view>
+
+   <!-- 答案与解析弹窗 -->
+   <view wx:if="{{showAnswerPopup}}" class="answer-popup">
+    <text>答案是{{correctAnswer}}，</text>
+    <text>因为{{explanation}}</text>
+    <button bindtap="closeAnswerPopup">关闭</button>
+  </view>
+
+  <!-- 社区和社交活动 -->
+  <view class="community">
+    <text class="sub-title">社区和社交活动</text>
+    <block wx:for="{{communityPosts}}" wx:key="id">
+      <view class="community-post">
+        <text class="post-title">{{item.title}}</text>
+        <text class="post-content">{{item.content}}</text>
+      </view>
+    </block>
+    <view class="new-post">
+      <textarea placeholder="分享你的经验..." bindinput="updateNewPostContent" value="{{newPostContent}}"></textarea>
+      <button bindtap="submitPost">发布</button>
+    </view>
+  </view>
+
+  <!-- 健康小贴士弹窗 -->
+  <view wx:if="{{showTip}}" class="tip-popup">
+    <view class="tip-content">
+      <text>{{dailyTip}}</text>
+      <button bindtap="closeTip">关闭</button>
+    </view>
+  </view>
+
+  <!-- 音乐播放器 -->
+  <audio src="{{backgroundMusic}}" loop autoplay></audio>
+  <button bindtap="toggleMusic">{{isMusicPlaying ? '暂停音乐' : '播放音乐'}}</button>
+</scroll-view>

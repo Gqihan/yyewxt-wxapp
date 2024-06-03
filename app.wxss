@@ -1,0 +1,17 @@
+/**app.wxss**/
+/* app.wxss */
+page {
+  background-color: #103f6b;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.text {
+  font-size: 18px;
+}
+

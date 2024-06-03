@@ -1,0 +1,19 @@
+<view class="card">
+  <view class="button-group">
+    <button bindtap="searchMedicine">查询中药</button>
+    <button bindtap="searchDisease">查询疾病</button>
+  </view>
+  <view class="input-group">
+    <input type="text" bindinput="onInputChange" placeholder="请输入中药或疾病名称"/>
+    <button class="send-button" bindtap="onSend">发送</button>
+  </view>
+  <view wx:if="{{error}}" class="error">{{error}}</view>
+  <view wx:if="{{result}}">
+    <view class="result">
+      <image wx:if="{{result.image}}" src="{{result.image}}" mode="widthFix"/>
+      <view wx:for="{{result}}" wx:key="key" wx:if="{{key !== 'image'}}">
+        <view>{{key}}: {{item}}</view>
+      </view>
+    </view>
+  </view>
+</view>
